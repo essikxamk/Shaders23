@@ -38,25 +38,27 @@ Pass {
         {
             float4 positionHCS : SV_POSITION;
             float3 positionWS : TEXCOORD;
+            float3 normal : TEXCOORD1;
         };
 
-       /* CBUFFER_START(UnityPerMaterial)
-        CBUFFEREND*/
 
-        float4 _Color;
         Varyings Vert(const Attributes input)
         {
             Varyings output;
             output.positionHCS = TransformObjectToHClip(input.positionOS);
             output.positionWS = TransformObjectToWorld(input.positionOS);
-            
+            output.normal = TransformObjectToWorldNormal(input.normalOS);
             
             return output;
         }
 
+        float4 _Color;
         float4 Frag(const Varyings input) : SV_Target
         {
-            return _Color * clamp(input.positionWS.x,0,1);
+            _Color = 0;
+            _Color.rgb = input.normal * 0.5 + 0.5;
+            return _Color;
+            //return _Color * clamp(input.positionWS.x,0,1);
         }
 
         ENDHLSL
