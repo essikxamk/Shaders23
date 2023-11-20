@@ -40,10 +40,10 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Ratio: 0.52
+    - _Ratio: 0.487
     m_Colors:
-    - _Color: {r: 0, g: 0.7246518, b: 1, a: 0}
-    - _DissolveColor: {r: 1, g: 0, b: 0.9872489, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 0}
+    - _DissolveColor: {r: 1, g: 0.02352941, b: 0.52425396, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2616160465447222786
 MonoBehaviour:
