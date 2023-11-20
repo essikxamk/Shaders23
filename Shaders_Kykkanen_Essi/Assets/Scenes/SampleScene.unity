@@ -3446,7 +3446,7 @@ MonoBehaviour:
   angle: 0
   frequency: 0
   cube_shader: {fileID: 7200000, guid: 278d83bd38040984eb6617a2e2188d78, type: 3}
-  cube_mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  cube_mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
   cube_material: {fileID: 2100000, guid: 8dea120c69afe6b46b56e45e76b0925f, type: 2}
 --- !u!4 &1833674860
 Transform:
