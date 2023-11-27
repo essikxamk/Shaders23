@@ -141,7 +141,7 @@ Shader "Custom/KunnonShader"
                 return output;
             }
             
-// Perus tekstuurin s‰mpl‰ys
+// Perus tekstuurin s√§mpl√§ys
 half4 SampleColor(const float2 uv) {
     return SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, uv);
 }
@@ -154,7 +154,7 @@ half4 SampleOcclusion(const float2 uv) {
 half4 SampleMetallic(const float2 uv) {
     return SAMPLE_TEXTURE2D(_MetallicMap, sampler_MetallicMap, uv);
 }
-// Normaalin s‰mpl‰ys
+// Normaalin s√§mpl√§ys
 half3 SampleNormal(const float2 uv) {
     return UnpackNormal(SAMPLE_TEXTURE2D(_NormalMap, sampler_NormalMap, uv));
 }

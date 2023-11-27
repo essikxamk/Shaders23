@@ -683,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GOLShader: {fileID: 7200000, guid: 3c5df176f76d6e246b2725481ba6359c, type: 3}
   GOLMaterial: {fileID: 2100000, guid: 0d6696dffd6c21e48beb81185bc1e01f, type: 2}
-  seeds: 3
+  seeds: 0
   color: {r: 0.9999032, g: 0, b: 1, a: 1}
   timeToUpdate: 2
 --- !u!64 &277314526

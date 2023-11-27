@@ -2,17 +2,59 @@ RWTexture2D<float4> State1;
 RWTexture2D<float4> State2;
 float4 CellColour;
 
-
-void UpdateCell()
+bool IsCellAlive(float4 cell)
 {
-    
+    return cell.x+cell.y+cell.z>0;
 }
+void UpdateCell(uint2 cellPos, RWTexture2D<float4> state1, RWTexture2D<float4> state2 )
+{
+    bool is_cell_alive;
+    int neighborsAlive=0;
+    cellPos=uint2(cellPos.x/512.0f, cellPos.y/512);
+
+ 
+    for (int i=cellPos.x-1; i<=cellPos.x+1; i++)
+    {
+        for(int j=cellPos.y-1; j<=cellPos.y+1; j++)
+        {
+            uint2 pos = uint2(i,j);
+            if((i==cellPos.x && j==cellPos.y) || (i<0 || j<0) || (i>=512 || j>=512))
+            {
+                continue;
+            }
+            if()
+            {
+                neighborsAlive++;
+            }
+        }
+    }
+
+        if()
+        {
+            if(neighborsAlive<2)
+            {
+                state1[cellPos]= 0;
+            }
+            if(neighborsAlive>3)
+            {
+                state1[cellPos]= 0;
+            }
+        }
+        else
+        {
+            if(neighborsAlive==3)
+            {
+                state1[cellPos]=state2[cellPos];
+            }
+        }
+    }
+
 #pragma kernel Update1
 [numthreads(8,8,1)]
 void Update1(uint3 id : SV_DispatchThreadID)
 {
    
-
+    UpdateCell(id,State1,State2);
     
 }
 
@@ -21,7 +63,7 @@ void Update1(uint3 id : SV_DispatchThreadID)
 void Update2(uint3 id : SV_DispatchThreadID)
 {
    
-
+    UpdateCell(id,State1, State2);
     
 }
 
