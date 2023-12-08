@@ -684,8 +684,8 @@ MonoBehaviour:
   GOLShader: {fileID: 7200000, guid: 3c5df176f76d6e246b2725481ba6359c, type: 3}
   GOLMaterial: {fileID: 2100000, guid: 0d6696dffd6c21e48beb81185bc1e01f, type: 2}
   seeds: 0
-  color: {r: 0.9999032, g: 0, b: 1, a: 1}
-  timeToUpdate: 2
+  color: {r: 0, g: 0.7692952, b: 1, a: 1}
+  timeToUpdate: 0
 --- !u!64 &277314526
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3554,7 +3554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1833674859
 MonoBehaviour:
   m_ObjectHideFlags: 0

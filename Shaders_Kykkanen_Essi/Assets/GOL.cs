@@ -11,7 +11,7 @@ public class GOL : MonoBehaviour
     [SerializeField] private Color color;
     [SerializeField] private float timeToUpdate;
     private float timeOfNextUpdate = 2;
-    private bool stateOn;
+    private bool stateOn=true;
     private RenderTexture GOLTexture1;
     private RenderTexture GOLTexture2;
     private static int Update1Kernel;
@@ -95,13 +95,13 @@ public class GOL : MonoBehaviour
             {
                 GOLShader.Dispatch(Update1Kernel, 512 / 8, 512 / 8, 1);
                 stateOn = false;
-                GOLMaterial.SetTexture(BaseMap, GOLTexture1);
+                GOLMaterial.SetTexture(BaseMap, GOLTexture2);
             }
             else
             {
                 GOLShader.Dispatch(Update2Kernel, 512 / 8, 512 / 8, 1);
                 stateOn = true;
-                GOLMaterial.SetTexture(BaseMap, GOLTexture2);
+                GOLMaterial.SetTexture(BaseMap, GOLTexture1);
             }
         }
     }
